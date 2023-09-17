@@ -16,12 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if (isset($_SESSION["id"])) {
         $id = $_SESSION["id"];
     } else {
-        // Handle the case where the user is not authenticated
-        // Redirect to the login page or show an error message
+        
         header("Location: login.html");
         exit;
     }
-    // Fetch user credits and send JSON response
+    
     $query = "SELECT credits FROM user_journey.login WHERE id = $id";
     $result = mysqli_query($connection, $query);
 
@@ -39,12 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if (isset($_SESSION["id"])) {
         $id = $_SESSION["id"];
     } else {
-        // Handle the case where the user is not authenticated
-        // Redirect to the login page or show an error message
+        
         header("Location: login.html");
         exit;
     }
-    // Perform credit deduction and send JSON response
+    
     $query = "SELECT credits FROM user_journey.login WHERE id = $id";
     $result = mysqli_query($connection, $query);
 
